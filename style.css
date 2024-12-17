@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background: #212121;
   height: 100vh;
   width: 100%;
@@ -12,10 +12,10 @@ body{
   align-items: center;
   justify-content: center;
 }
-button{
+button {
   padding: 5px 10px;
   border: 0;
-  background: #3D7ACD;
+  background: #3d7acd;
   color: #fff;
   border-radius: 2px;
   position: absolute;
@@ -32,34 +32,40 @@ button{
   border: 1px solid lavender;
   border-radius: 5px;
   backdrop-filter: blur(10px);
-  transition: .6s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
-p{
+p {
   padding-top: 10px;
   color: lavender;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: .6s ease-in-out;
 }
 h3 {
   color: lavender;
-  border-bottom: .5px solid lavenderblush;
+  border-bottom: 0.5px solid lavenderblush;
   padding-bottom: 10px;
 }
 
-.box:hover {
-  height: 210px;
+.box.active {
+  height: 280px;
 }
 
-.box:hover p {
+.box.active p {
   white-space: normal;
+  animation: fadeIn 1s linear;
 }
 
-button:hover p {
-  white-space: normal;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.box:hover button{
-  display: none;
+
+.box.active button {
+  animation: fadeIn 1.5s linear;
 }
